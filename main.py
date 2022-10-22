@@ -36,7 +36,7 @@ canvas.create_text(102, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "b
 canvas.grid(column=1, row=1) #calls the canvas function to display
 
 #Creating the "Timer" Label:
-title_label = Label(text="Timer", fg=GREEN, bg=BLACK, font=(FONT_NAME, 30, "bold"))
+title_label = Label(text="Timer", fg=GREEN, bg=BLACK, font=(FONT_NAME, 50, "bold"))
 title_label.grid(column=1, row=0)
 
 
