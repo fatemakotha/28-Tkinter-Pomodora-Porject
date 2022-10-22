@@ -26,7 +26,10 @@ LONG_BREAK_MIN = 20
 
 #SO INSETAD WE DO THIS:
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
-
+def count_down(count):
+    print(count)
+    if count > 0:
+        window.after(1000, count_down, count - 1) #starts after 1000ms and starts from 5, as count_down(5) is given as input. And decreases by 1
 
 
 
@@ -39,8 +42,10 @@ LONG_BREAK_MIN = 20
 window = Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady=50, bg=BLACK) #bg changes background color
+count_down(5) #starts at 5 seconds and then counts down **
 
-window.after()
+
+
 
 #Create a canvas using the canvas widget:
 canvas = Canvas(width=200, height=224, bg=BLACK, highlightthickness=0) #bg changes background color #highlightthickness=0 removes the white border of canvas ***
