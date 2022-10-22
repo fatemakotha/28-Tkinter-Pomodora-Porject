@@ -2,9 +2,11 @@ from tkinter import *
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
-RED = "#e7305b"
+RED = "CF0A0A"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
+BLACK = "000000"
+ORANGE = "DC5F00"
 FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
