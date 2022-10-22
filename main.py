@@ -28,10 +28,10 @@ canvas = Canvas(width=200, height=224)
 
 #Add image to canvas:
 tomato_img = PhotoImage(file="tomato - Copy (2).png") #PhotoImage reads through a file and gets hold of an image
-canvas.create_image(102, 112, image=tomato_img) #inserts image to the background
+canvas.create_image(102, 112, image=tomato_img) #inserts image to the background at the x=12 and y=112
 
 #Create text in canvas:
-canvas.create_text(102, 112, text="00:00")
+canvas.create_text(102, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold")) #inserts text to the background at the x=12 and y=130
 canvas.pack() #calls the canvas function to display
 
 
