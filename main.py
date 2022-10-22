@@ -15,6 +15,11 @@ LONG_BREAK_MIN = 20
 # ---------------------------- TIMER RESET ------------------------------- #
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
+def start_timer():
+    count_down(5)
+
+
+
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 #You could do this using the following code:
@@ -27,7 +32,7 @@ LONG_BREAK_MIN = 20
 #SO INSETAD WE DO THIS:
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
-    canvas.itemconfig(timer_text, text=count)
+    canvas.itemconfig(timer_text, text=count) #timer_text is the name of the item to be configured, and text is what it is to be configured into
     if count > 0:
         window.after(1000, count_down, count - 1) #starts after 1000ms and starts from 5, as count_down(5) is given as input. And decreases by 1
 
@@ -57,7 +62,7 @@ canvas.create_image(100, 112, image=tomato_img) #inserts image to the background
 timer_text = canvas.create_text(102, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold")) #inserts text to the background at the x=12 and y=130
 canvas.grid(column=1, row=1) #calls the canvas function to display
 
-count_down(5) #starts at 5 seconds and then counts down **
+
 
 #Creating the "Timer" Label:
 title_label = Label(text="Timer", fg=GREEN, bg=BLACK, font=(FONT_NAME, 50, "bold"))
@@ -65,8 +70,9 @@ title_label.grid(column=1, row=0)
 
 
 #Creating the START Button:
-start_button = Button(text="Start", width=8, bg=ORANGE, fg="white", font=(FONT_NAME, 15, "bold"))
+start_button = Button(text="Start", width=8, bg=ORANGE, fg="white", font=(FONT_NAME, 15, "bold"), command=start_timer)
 start_button.grid(column=0, row=2)
+
 
 
 #Creating the STOP Button:
