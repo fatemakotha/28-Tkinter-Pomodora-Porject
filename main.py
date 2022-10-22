@@ -27,7 +27,7 @@ LONG_BREAK_MIN = 20
 #SO INSETAD WE DO THIS:
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
-    print(count)
+    canvas.itemconfig(timer_text, text=count)
     if count > 0:
         window.after(1000, count_down, count - 1) #starts after 1000ms and starts from 5, as count_down(5) is given as input. And decreases by 1
 
@@ -42,7 +42,7 @@ def count_down(count):
 window = Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady=50, bg=BLACK) #bg changes background color
-count_down(5) #starts at 5 seconds and then counts down **
+
 
 
 
@@ -54,8 +54,10 @@ canvas = Canvas(width=200, height=224, bg=BLACK, highlightthickness=0) #bg chang
 tomato_img = PhotoImage(file="tomato - Copy (2).png") #PhotoImage reads through a file and gets hold of an image
 canvas.create_image(100, 112, image=tomato_img) #inserts image to the background at the x=12 and y=112
 #Create text in canvas:
-canvas.create_text(102, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold")) #inserts text to the background at the x=12 and y=130
+timer_text = canvas.create_text(102, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold")) #inserts text to the background at the x=12 and y=130
 canvas.grid(column=1, row=1) #calls the canvas function to display
+
+count_down(5) #starts at 5 seconds and then counts down **
 
 #Creating the "Timer" Label:
 title_label = Label(text="Timer", fg=GREEN, bg=BLACK, font=(FONT_NAME, 50, "bold"))
