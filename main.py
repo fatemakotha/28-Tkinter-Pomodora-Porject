@@ -24,6 +24,9 @@ window.title("Pomodoro")
 #Putting an image in the background:
 #Create a canvas using the canvas widget:
 canvas = Canvas(width=200, height=224)
+#Add image to canvas
+PhotoImage(file="tomato - Copy (2).png") #PhotoImage reads through a file and gets hold of an image
+canvas.create_image(100, 112, imag)
 
 
 
