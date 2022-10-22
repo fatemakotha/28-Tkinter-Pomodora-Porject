@@ -26,7 +26,7 @@ window.config(padx=100, pady=50, bg=BLACK) #bg changes background color
 
 
 #Create a canvas using the canvas widget:
-canvas = Canvas(width=200, height=224, bg=BLACK, highlightthickness=0) #bg changes background color #highlightthickness=0 removes the white border of canvas
+canvas = Canvas(width=200, height=224, bg=BLACK, highlightthickness=0) #bg changes background color #highlightthickness=0 removes the white border of canvas ***
 #Putting an image in the background:
 #Add image to canvas:
 tomato_img = PhotoImage(file="tomato - Copy (2).png") #PhotoImage reads through a file and gets hold of an image
@@ -46,9 +46,12 @@ start_button.grid(column=0, row=2)
 
 
 #Creating the STOP Button:
-stop_button = Button(text="Stop", width=8, bg=ORANGE, fg="white", font=(FONT_NAME, 15, "bold"))
-stop_button.grid(column=2, row=2)
+reset_button = Button(text="Stop", width=8, bg=ORANGE, fg="white", font=(FONT_NAME, 15, "bold"))
+reset_button.grid(column=2, row=2)
 
+#Check mark Label:
+check_marks = Label(text="✅", fg=GREEN, bg=BLACK, font=(FONT_NAME, 15, "bold"))
+check_marks.grid(column=1, row=2)
 
 
 
