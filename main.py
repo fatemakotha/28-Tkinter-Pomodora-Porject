@@ -17,6 +17,7 @@ LONG_BREAK_MIN = 20
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 
 # ---------------------------- UI SETUP ------------------------------- #
+#Creating a window:
 window = Tk()
 window.title("Pomodoro")
 
