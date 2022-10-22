@@ -5,7 +5,7 @@ PINK = "#e2979c"
 RED = "CF0A0A"
 GREEN = "#9bdeac"
 YELLOW = "#f7f5dd"
-BLACK = "000000"
+BLACK = "black"
 ORANGE = "DC5F00"
 FONT_NAME = "Courier"
 WORK_MIN = 25
@@ -22,7 +22,7 @@ LONG_BREAK_MIN = 20
 #Creating a window:
 window = Tk()
 window.title("Pomodoro")
-window.config(padx=100, pady=50)
+window.config(padx=100, pady=50, bg=BLACK)
 
 #Putting an image in the background:
 #Create a canvas using the canvas widget:
