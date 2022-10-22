@@ -21,7 +21,21 @@ LONG_BREAK_MIN = 20
 window = Tk()
 window.title("Pomodoro")
 
+#Putting an image in the background:
+#Create a canvas using the canvas widget:
+canvas = Canvas(width=200, height=224)
 
+
+
+
+
+
+
+
+
+
+
+window.mainloop()
 
 
 
