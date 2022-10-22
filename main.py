@@ -22,15 +22,15 @@ LONG_BREAK_MIN = 20
 #Creating a window:
 window = Tk()
 window.title("Pomodoro")
-window.config(padx=100, pady=50, bg=BLACK)
+window.config(padx=100, pady=50, bg=BLACK) #bg changes background color
 
 #Putting an image in the background:
 #Create a canvas using the canvas widget:
-canvas = Canvas(width=200, height=224)
+canvas = Canvas(width=200, height=224, bg=BLACK, highlightthickness=0) #bg changes background color #highlightthickness=0 removes the white border of canvas
 
 #Add image to canvas:
 tomato_img = PhotoImage(file="tomato - Copy (2).png") #PhotoImage reads through a file and gets hold of an image
-canvas.create_image(102, 112, image=tomato_img) #inserts image to the background at the x=12 and y=112
+canvas.create_image(100, 112, image=tomato_img) #inserts image to the background at the x=12 and y=112
 
 #Create text in canvas:
 canvas.create_text(102, 130, text="00:00", fill="white", font=(FONT_NAME, 35, "bold")) #inserts text to the background at the x=12 and y=130
