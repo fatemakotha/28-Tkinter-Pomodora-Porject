@@ -17,6 +17,22 @@ LONG_BREAK_MIN = 20
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
+#You could do this using the following code:
+# import time
+# count = 5
+# while True:
+#     time.sleep(1)
+#     count -= 1 #BUT SINCE window.mainloop() is ALREADY A LOOP, this WON'T WORK !! ****
+
+#SO INSETAD WE DO THIS:
+# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
+
+
+
+
+
+
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 #Creating a window:
@@ -24,6 +40,7 @@ window = Tk()
 window.title("Pomodoro")
 window.config(padx=100, pady=50, bg=BLACK) #bg changes background color
 
+window.after()
 
 #Create a canvas using the canvas widget:
 canvas = Canvas(width=200, height=224, bg=BLACK, highlightthickness=0) #bg changes background color #highlightthickness=0 removes the white border of canvas ***
