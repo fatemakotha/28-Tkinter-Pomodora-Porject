@@ -27,7 +27,7 @@ window.config(padx=100, pady=50)
 canvas = Canvas(width=200, height=224)
 #Add image to canvas:
 tomato_img = PhotoImage(file="tomato - Copy (2).png") #PhotoImage reads through a file and gets hold of an image
-canvas.create_image(100, 112, image=tomato_img) #inserts image to the background
+canvas.create_image(102, 112, image=tomato_img) #inserts image to the background
 canvas.pack() #calls the canvas function to display
 
 
