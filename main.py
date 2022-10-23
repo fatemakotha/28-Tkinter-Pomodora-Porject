@@ -36,7 +36,7 @@ def count_down(count):
     Now if we do 245 % 60 = """
 
     count_min = math.floor(count / 60) #math.floor() returns the largest whole number that is less <= x. IN THIS CASE ITS 4 **
-    count_seconds = count % 60 #gives the remainder number of seconds
+    count_seconds = count % 60 #gives the remainder number of seconds WHICH IS 5 **
 
 
     #Changing an item in canvas is different than changing a Label: **
