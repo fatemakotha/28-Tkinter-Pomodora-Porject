@@ -32,12 +32,15 @@ def start_timer():
 #SO INSETAD WE DO THIS:
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
-    count_min = math.floor(count / 60) #math.floor() returns the largest whole number that is less <= x
+    """Let's say we start from 245 mins. Then 245 / 60 = 4.083 MINS, which means 4MINS and 0.083SECS
+    Now if we do 245 % 60 = """
+
+    count_min = math.floor(count / 60) #math.floor() returns the largest whole number that is less <= x. IN THIS CASE ITS 4 **
     count_seconds = count % 60 #gives the remainder number of seconds
 
 
     #Changing an item in canvas is different than changing a Label: **
-    canvas.itemconfig(timer_text, text=f"{count_min}:{count_seconds}") #timer_text is the name of the item to be configured, and text is what it is to be configured into
+    canvas.itemconfig(timer_text, text=f"0{count_min}:{count_seconds}") #timer_text is the name of the item to be configured, and text is what it is to be configured into
     if count > 0:
         window.after(1000, count_down, count - 1) #starts after 1000ms and starts from 5, as count_down(5) is given as input. And decreases by 1
 
