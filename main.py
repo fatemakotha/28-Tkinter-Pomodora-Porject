@@ -18,16 +18,19 @@ reps = 0
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
     global reps
-    reps += 1
+    reps += 1 #reps increase by 1 everytime the loop runs **
 
     work_sec = WORK_MIN * 60
     short_break_sec = SHORT_BREAK_MIN * 60
     long_break_sec = LONG_BREAK_MIN * 60
 
+    #If it's the 8th rep: **
     if reps % 8 == 0:
         count_down(long_break_sec)
+    # If it's the 2nd/4th/6th rep: **
     elif reps % 2 == 0:
         count_down(short_break_sec)
+    # If it's the 1st/3rd/5th/7th rep: **
     else:
         count_down(work_sec)
 
