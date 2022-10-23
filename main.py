@@ -32,8 +32,9 @@ def start_timer():
 #SO INSETAD WE DO THIS:
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
-    """Let's say we start from 245 mins. Then 245 / 60 = 4.083 MINS, which means 4MINS and 0.083SECS
-    Now if we do 245 % 60 = """
+    """#Let's say we start from 245 mins. Then 245 / 60 = 4.083 MINS, which means 4MINS and 0.083SECS
+       #Now if we do 245 % 60 = 5
+       #Now evertime the loops runs, the count_min and count_secs DECREASES by 1"""
 
     count_min = math.floor(count / 60) #math.floor() returns the largest whole number that is less <= x. IN THIS CASE ITS 4 **
     count_seconds = count % 60 #gives the remainder number of seconds WHICH IS 5 **
