@@ -18,16 +18,6 @@ LONG_BREAK_MIN = 20
 def start_timer():
     count_down(5 * 60)
 
-
-# ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
-#You could do this using the following code:
-# import time
-# count = 5
-# while True:
-#     time.sleep(1)
-#     count -= 1 #BUT SINCE window.mainloop() is ALREADY A LOOP, this WON'T WORK !! ****
-
-#SO INSETAD WE DO THIS:
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
     """#Let's say we start from 245 mins. Then 245 / 60 = 4.083 MINS, which means 4MINS and 0.083SECS
@@ -36,7 +26,9 @@ def count_down(count):
 
     count_min = math.floor(count / 60) #math.floor() returns the largest whole number that is less <= x. IN THIS CASE ITS 4 **
     count_seconds = count % 60 #gives the remainder number of seconds WHICH IS 5 **
-    #when count_seconds = 0, it's assigned to a string that's "00"
+    #when count_seconds = 0, it's assigned to a string that's "00" using DYNAMIC TYPING
+    if count_seconds < 10:
+        count_seconds = f"0{count_seconds}"
     if count_seconds == 0:
         count_seconds = "00"
 
