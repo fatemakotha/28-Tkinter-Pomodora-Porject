@@ -12,8 +12,11 @@ WORK_MIN = 1
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
+timer = None
 
 # ---------------------------- TIMER RESET ------------------------------- #
+def reset_timer():
+    window.after_cancel(timer) #we can only pass a variable in after_cancel(), so we name our after() function as timer = after() **
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
@@ -27,12 +30,15 @@ def start_timer():
     #If it's the 8th rep: **
     if reps % 8 == 0:
         count_down(long_break_sec)
+        title_label.config(text="Long Break", fg=RED)
     # If it's the 2nd/4th/6th rep: **
     elif reps % 2 == 0:
         count_down(short_break_sec)
+        title_label.config(text="Short Break", fg=PINK)
     # If it's the 1st/3rd/5th/7th rep: **
     else:
         count_down(work_sec)
+        title_label.config(text="Work", fg=GREEN)
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
@@ -52,11 +58,15 @@ def count_down(count):
     #Changing an item in canvas is different than changing a Label: **
     canvas.itemconfig(timer_text, text=f"{count_min}:{count_seconds}") #timer_text is the name of the item to be configured, and text is what it is to be configured into
     if count > 0:
-        window.after(1000, count_down, count - 1) #starts after 1000ms and starts from 5, as count_down(5) is given as input. And decreases by 1
+        global timer
+        timer = window.after(1000, count_down, count - 1) #starts after 1000ms and starts from 5, as count_down(5) is given as input. And decreases by 1
     elif count == 0:
-        start_timer()
-
-
+        start_timer() #activates timer again after 1 rep **********
+        marks = ""
+        work_sessions = math.floor(reps / 2)
+        for _ in range(work_sessions): #reps / 2 give the number of work sessions as there is one work one break in every rep
+            marks += "✅"
+        check_marks.config(text=marks)
 # ---------------------------- UI SETUP ------------------------------- #
 #Creating a window:
 window = Tk()
@@ -86,12 +96,12 @@ start_button.grid(column=0, row=2)
 
 
 #Creating the STOP Button:
-reset_button = Button(text="Stop", width=8, bg=ORANGE, fg="white", font=(FONT_NAME, 15, "bold"))
+reset_button = Button(text="Stop", width=8, bg=ORANGE, fg="white", font=(FONT_NAME, 15, "bold"), command=reset_timer)
 reset_button.grid(column=2, row=2)
 
 
 #Check mark Label:
-check_marks = Label(text="✅", fg=GREEN, bg=BLACK, font=(FONT_NAME, 15, "bold"))
+check_marks = Label(text="", fg=GREEN, bg=BLACK, font=(FONT_NAME, 15, "bold"))
 check_marks.grid(column=1, row=2)
 
 
