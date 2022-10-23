@@ -17,7 +17,15 @@ timer = None
 # ---------------------------- TIMER RESET ------------------------------- #
 def reset_timer():
     window.after_cancel(timer) #we can only pass a variable in after_cancel(), so we name our after() function as timer = after() **
-
+    #change timer_text:
+    canvas.itemconfig(timer_text, text = "00:00")
+    #change title_label to "Timer":
+    title_label.config(text="Timer")
+    #reset check_marks:
+    check_marks.config(text="")
+    #set reps to 0:
+    global reps
+    reps = 0
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 def start_timer():
     global reps
@@ -96,7 +104,7 @@ start_button.grid(column=0, row=2)
 
 
 #Creating the STOP Button:
-reset_button = Button(text="Stop", width=8, bg=ORANGE, fg="white", font=(FONT_NAME, 15, "bold"), command=reset_timer)
+reset_button = Button(text="Reset", width=8, bg=ORANGE, fg="white", font=(FONT_NAME, 15, "bold"), command=reset_timer)
 reset_button.grid(column=2, row=2)
 
 
